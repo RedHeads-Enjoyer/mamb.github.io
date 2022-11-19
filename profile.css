@@ -62,88 +62,23 @@ nav {
     background-color: var(--main-color);
 }
 
-footer {
-    background-color: var(--main-color);
-}
-
-.footer_grid {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 900px;
-    grid-template-areas: 
-    "social address"
-    "contact address"
-}
-
 .content {
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 900px;
-    padding-left: 20px;
-    padding-right: 20px;
-    min-height: calc(100vh - 307px);
 }
 
-.social {
-    grid-area: social;
-}
-
-.social_div {
-    display: flex;
-}
-
-.logo {
-    background-color: var(--focus-main-color);
+.content img {
+    width: 300px;
+    height: 400px;
     border-radius: 10px;
-    margin: 0;
-    padding: 2px;
-    height: 40px;
-    width: 40px;
-    margin-right: 6px;
-    transition: 0.12s;
+    box-sizing: border-box;
+    border: 4px solid var(--main-color);
+    float: left;
+    margin-right: 20px;
 }
 
-.logo:hover {
-    cursor: pointer;
-    background-color: #fff;
-} 
-
-svg {
-    transition: 0.12s;
-}
-
-svg:hover {
-    fill: var(--focus-main-color);
-}
-
-#contact {
-    grid-area: contact;
-}
-
-#contact a {
-    text-decoration: none;
-    color: white;
-}
-
-#address {
-    grid-area: address;
-}
-
-
-footer p {
-    color: white;
-}
-
-.footer_h {
+.theme {
     font-weight: 500;
     font-size: 20px;
-}
-
-#copy {
-    text-align: center;
-    background-color: var(--focus-main-color);
 }
