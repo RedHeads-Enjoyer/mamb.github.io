@@ -19,14 +19,14 @@ code {
         monospace;
 }
 
-a {
+.links a {
     margin-top: 3px;
     font-weight: 500;
     text-decoration: none;
     color: white;
 }
 
-a::after {
+.links a::after {
     content: '';
     display: block;
     width: 0px;
@@ -36,9 +36,18 @@ a::after {
     transition: 0.12s;
 }
 
-a:hover::after {
+.links a:hover::after {
     margin-left: 0;
     width: 100%;
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas:
+        "navigation navigation"
+        "search result";
 }
 
 input {
@@ -130,14 +139,7 @@ nav {
 }
 
 
-.main {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-areas:
-        "navigation navigation"
-        "search result";
-}
+
 
 .search_div {
     background-color: rgb(255, 255, 255);
@@ -338,5 +340,3 @@ nav {
     display: flex;
     justify-content: space-around;
 }
-
-.links a {}
