@@ -63,6 +63,8 @@ nav {
 }
 
 .content {
+    padding-left: 20px;
+    padding-right: 20px;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -74,11 +76,74 @@ nav {
     border-radius: 10px;
     box-sizing: border-box;
     border: 4px solid var(--main-color);
-    float: left;
-    margin-right: 20px;
 }
 
 .theme {
     font-weight: 500;
     font-size: 20px;
+}
+
+.social_div {
+    display: flex;
+}
+
+.logo {
+    background-color: white;
+    border-radius: 10px;
+    margin: 0;
+    padding: 2px;
+    height: 40px;
+    width: 40px;
+    margin-right: 6px;
+    transition: 0.12s;
+}
+
+.logo:hover {
+    cursor: pointer;
+    background-color: var(--focus-main-color);
+}
+
+svg {
+    transition: 0.12s;
+}
+
+svg:hover {
+    fill: white;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-areas:
+        "avatar about"
+        "avatar social"
+        "gallery_text gallery_text"
+        "gallery gallery";
+}
+
+.about {
+    grid-area: about;
+}
+
+.social {
+    align-self:flex-end;
+    grid-area: social;
+}
+
+#avatar {
+    grid-area: avatar;
+}
+
+#main_title {
+    grid-area: main_title;
+}
+
+#gallery_text {
+    margin-top: 20px;
+    grid-area: gallery_text;
+    text-align: center;
+}
+
+.gallery {
+    grid-area: gallery;
 }
