@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./search.css">
+    <title>Поиск</title>
+</head>
+
+<body>
+    <div class='main'>
+        <nav>
+            <div class='links'>
+                <a href="/about.html">О нас</a>
+                <a href="/addRecipe.html">Добавить рецепт</a>
+                <a href="/profile.html">Мой профиль</a>
+                <a href="/search.html">Найти рецепт</a>
+            </div>
+        </nav>
+        <div class='search_div'>
+            <form>
+                <!-- Строка поиска -->
+                <div id='search_bar'>
+                    <input type='text' placeholder='Название блюда' name='name'></input>
+                    <input type='submit' value='Найти'></input>
+                </div>
+                <!-- Тип блюда -->
+                <p class='group_name'>Тип блюда</p>
+                <input type='checkbox' id='soup'></input>
+                <label class='checkbox_label' for='soup'>Суп</label>
+                <br>
+                <input type='checkbox' id='hot'></input>
+                <label class='checkbox_label' for='hot'>Горячее</label>
+                <br>
+                <input type='checkbox' id='drink'></input>
+                <label class='checkbox_label' for='drink'>Напиток</label>
+                <br>
+                <input type='checkbox' id='bakery'></input>
+                <label class='checkbox_label' for='bakery'>Выпечка</label>
+                <br>
+                <input type='checkbox' id='dessert'></input>
+                <label class='checkbox_label' for='dessert'>Десерт</label>
+                <br>
+                <input type='checkbox' id='salad'></input>
+                <label class='checkbox_label' for='salad'>Салат</label>
+                <br>
+                <input type='checkbox' id='souce'></input>
+                <label class='checkbox_label' for='souce'>Соус</label>
+                <!-- Оценки пользователей -->
+                <p class='group_name'>Оценки пользователей</p>
+                <input type='radio' id='good_score' name='score'></input>
+                <label class='radix_label' for='good_score'>Только хорошие</label>
+                <br>
+                <input type='radio' id='any_score' name='score' checked></input>
+                <label class='radix_label' for='any_score'>Любые</label>
+                <!-- Время приготовления -->
+                <p class='group_name'>Время приготовления, минуты</p>
+                <input type='number' name='time' class='text_from_to' placeholder='От 5' id='time_from' min='5'
+                    max='600'></input>
+                <input type='number' name='time' class='text_from_to' placeholder='До 600' id='time_to' min='5'
+                    max='600'></input>
+                <!-- Сложность приготовления -->
+                <p class='group_name'>Сложность приготовления</p>
+                <input type='range' min='1' max='10' step='1'></input>
+                <!-- Для вегетариянцев -->
+                <p class='group_name'>Для вегетариянцев</p>
+                <input type='checkbox' id='for_vegetarian'></input>
+                <label class='checkbox_label' for='for_vegetarian'>Да/нет</label>
+            </form>
+        </div>
+        <div class='result_div'>
+            <p id='recipe_count'>Найдено 10 рцептов</p>
+            <div id='result_gallery'>
+
+
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа1</p>
+                    <div class='image_div'>
+                        <img class='recipe_img'
+                            src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img>
+                    </div>
+                    <p class='recipe_description'> Lorem fgds fg dfg hj ghjty jdsufjksdufds fds fdshf sfdfdjshjf</p>
+                    <div class='recipe_info'>
+                        <p id="user_score"> Оценка: 4.2/5</p>  
+                        <p id="difficulty">Сложность: 5/10</p>
+                        <p id="author_name"> Имя автора</p>
+                        <div class="recipe_time">
+                            <img src="/img/clock.png" alt="">
+                            <p id="time">1ч 20мин</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа2</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа3</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа4</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа5</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+                <div class='recipe_card'>
+                    <p class='recipe_name'>Паста филиппа</p>
+                    <div class='image_div'>
+                        <!-- <img class='recipe_img' src='https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811'></img> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+* {
+    --main-text-color: black;
+    --main-color: rgb(255, 120, 0);
+    --focus-main-color: rgb(250, 80, 0);
+    --semi-color: rgb(210, 210, 210);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+a {
+    margin-top: 3px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+
+a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    margin-left: 50%;
+    height: 2px;
+    background-color: white;
+    transition: 0.12s;
+}
+
+a:hover::after {
+    margin-left: 0;
+    width: 100%;
+}
+
+input {
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+input[type='range'],
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 14px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    border: 2px solid var(--main-color);
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.radix_label::before,
+.checkbox_label::before {
+    transition: 0.12s;
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 17px;
+    height: 18px;
+    box-sizing: border-box;
+    border: 5px solid rgb(210, 210, 210);
+}
+
+input[type='radio']:checked+.radix_label::before,
+input[type='checkbox']:checked+.checkbox_label::before {
+    border: 5px solid var(--main-color);
+}
+
+
+.radix_label,
+.checkbox_label {
+    padding-left: 25px;
+    position: relative;
+    color: var(--main-text-color);
+    font-weight: 400;
+}
+
+.checkbox_label::before {
+    border-radius: 5px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+nav {
+    grid-area: navigation;
+    height: 30px;
+    background-color: var(--main-color);
+}
+
+.search_div {
+    grid-area: "search";
+}
+
+.result_div {
+    grid-area: "result";
+}
+
+
+.main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas:
+        "navigation navigation"
+        "search result";
+}
+
+.search_div {
+    background-color: rgb(255, 255, 255);
+    border-right: 2px solid rgb(220, 220, 220);
+}
+
+.search_div form {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search_bar {
+    display: flex;
+    margin-top: 10px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+}
+
+#search_bar input[type=text] {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 70%;
+    height: 30px;
+    border-radius: 5px 0 0 5px;
+}
+
+#search_bar input[type=submit] {
+    transition: 0.12s;
+    width: 30%;
+    height: 30px;
+    color: white;
+    background-color: var(--main-color);
+}
+
+#search_bar input[type=submit]:hover {
+    cursor: pointer;
+    background-color: var(--focus-main-color);
+}
+
+.group_name {
+    font-weight: 500;
+    color: var(--main-text-color);
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.text_from_to {
+    transition: 0.12s;
+    text-align: center;
+    border-radius: 5px;
+    height: 30px;
+    width: 66px;
+    margin-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid var(--semi-color);
+}
+
+.text_from_to:focus {
+    border: 2px solid var(--main-color);
+}
+
+.text_from_to::placeholder {
+    text-align: center;
+}
+
+.result_div {
+    overflow-y: scroll;
+    background-color: rgb(255, 255, 255);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.result_div::-webkit-scrollbar {
+    width: 10px;
+}
+
+.result_div::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+.result_div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: rgb(249, 249, 249);
+}
+
+#recipe_count {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#result_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.recipe_card {
+    position: relative;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 5px black;
+    transition: 0.12s;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.recipe_card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--main-color);
+}
+
+.recipe_name {
+    margin-top: 0;
+    font-weight: 500;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.image_div {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.recipe_img {
+    width: 100%;
+}
+
+.recipe_description::after {
+    content: '';
+    display: block;
+    position: relative;
+    margin-top: 8px;
+    height: 2px;
+    width: 100%;
+    background-color: var(--semi-color);
+}
+
+.recipe_info {
+    position: absolute;
+    bottom: 4px;
+    /* text-align: center; */
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "score difficulty"
+    "author time"
+    ;
+}
+
+#author_name {
+    grid-area: "author";
+}
+
+#user_score {
+    grid-area: "score";
+}
+
+#difficulty {
+    grid-area: "difficulty";
+}
+
+#time {
+    grid-area: "time";
+    display: inline;
+}
+
+
+.recipe_info img {
+    width: 18px;
+    height: auto;
+}
+
+.recipe_info p {
+    margin: 0;
+}
+
+.recipe_description {
+    text-indent: 10px;
+}
+
+.links {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.links a {}
