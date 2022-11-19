@@ -90,10 +90,26 @@
 
             <div class="rate_recipe">
                 <p class="theme">Оцените рецепт</p>
-                
+                <form action="#">
+                    <label for="score">Вкус блюда </label>
+                    <input type="range" id="score" min='0' max='5' step="1">
+                    <br>
+                    <label for="difficulty">Сложность приготволения </label>
+                    <input type="range" id="difficulty" min="1" max="10" step="1">
+                    <br>
+                    <input type='checkbox' id='is_vegan'></input>
+                    <label class='checkbox_label' for='is_vegan'>Для вегетариянцев</label>
+                    <br>
+                    <input id="rate_btn" type="submit" value="Оценить">
+                </form>
             </div>
         </div>
     </main>
+    <footer>
+        <div id="copy">
+            <p>Copiriting 2022 3P9lTb Entertainment. All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 
 </html>

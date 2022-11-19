@@ -57,12 +57,27 @@ p {
     justify-content: space-around;
 }
 
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: rgb(249, 249, 249);
+}
+
 nav {
     height: 30px;
     background-color: var(--main-color);
 }
 
 .content {
+    padding-bottom: 20px;
     max-width: 1000px;
     padding-left: 20px;
     padding-right: 20px;
@@ -75,7 +90,8 @@ nav {
     "recipe_gallery recipe_info"
     "recipe_description recipe_description"
     "recipe_ingredients recipe_ingredients"
-    "coocking_steps coocking_steps";
+    "coocking_steps coocking_steps"
+    "rate_recipe rate_recipe";
 }
 
 .recipe_gallery {
@@ -175,9 +191,86 @@ nav {
 }
 
 .coocking_steps ol {
+    margin-top: 3px;
     padding-left: 20px;
 }
 
 .coocking_steps ol li {
     margin-bottom: 10px;
+}
+
+.rate_recipe {
+    grid-area: rate_recipe;
+}
+
+#copy {
+    color: white;
+    text-align: center;
+    background-color: var(--focus-main-color);
+}
+
+
+input[type='range'],
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 14px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    border: 2px solid var(--main-color);
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.checkbox_label::before {
+    transition: 0.12s;
+    border-radius: 5px;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    width: 17px;
+    height: 18px;
+    box-sizing: border-box;
+    border: 5px solid rgb(210, 210, 210);
+}
+
+input[type='checkbox']:checked+.checkbox_label::before {
+    border: 5px solid var(--main-color);
+}
+
+
+.checkbox_label {
+    margin-left: -10px;
+    padding-right: 25px;
+    position: relative;
+    color: var(--main-text-color);
+    font-weight: 400;
+}
+
+#rate_btn {
+    color: white;
+    margin-top: 5px;
+    outline: none;
+    border: 0;
+    background-color: var(--main-color);
+    width: 100px;
+    height: 30px;
+}
+
+#rate_btn:hover {
+    cursor: pointer;
+    background-color: var(--focus-main-color);
 }
