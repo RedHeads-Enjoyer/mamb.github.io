@@ -26,6 +26,16 @@ code {
     color: white;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:checked {
+    text-decoration: none;
+    color: black;
+}
+
 .links a::after {
     content: '';
     display: block;

@@ -1,0 +1,183 @@
+* {
+    --main-text-color: black;
+    --main-color: rgb(255, 120, 0);
+    --focus-main-color: rgb(250, 80, 0);
+    --semi-color: rgb(210, 210, 210);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.links a {
+    margin-top: 3px;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.links a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    margin-left: 50%;
+    height: 2px;
+    background-color: white;
+    transition: 0.12s;
+}
+
+.links a:hover::after {
+    margin-left: 0;
+    width: 100%;
+}
+
+.links {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav {
+    height: 30px;
+    background-color: var(--main-color);
+}
+
+.content {
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    "recipe_name recipe_name"
+    "recipe_gallery recipe_info"
+    "recipe_description recipe_description"
+    "recipe_ingredients recipe_ingredients"
+    "coocking_steps coocking_steps";
+}
+
+.recipe_gallery {
+    width: fit-content;
+    display: flex;
+    grid-area: recipe_gallery;
+}
+
+.recipe_name {
+    grid-area: recipe_name;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 26px;
+    text-align: center;
+}
+
+.small_img {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    height: 300px;
+    width: 100px;
+    overflow-y: scroll;
+}
+
+.small_img::-webkit-scrollbar {
+    width: 10px;
+}
+
+.small_img::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+.small_img::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: rgb(249, 249, 249);
+}
+
+.small_img img {
+    border-radius: 4px;
+    width: 100px;
+    height: auto;
+}
+
+#main_food {
+    height: 320px;
+    width: auto;
+    overflow: hidden;
+    border-radius: 0 10px 10px 0;
+}
+
+
+#main_food img {
+    height: 320px;
+    width: auto;
+}
+
+.recipe_info {
+    grid-area: recipe_info;
+}
+
+.theme {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.recipe_description {
+    margin-top: 20px;
+    grid-area: recipe_description;
+}
+
+.recipe_ingredients {
+    margin-top: 20px;
+    grid-area: recipe_ingredients;
+}
+
+.recipe_ingredients ul {
+    margin-top: 3px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.recipe_ingredients ul li::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 10px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 3px solid var(--main-color);
+}
+
+.coocking_steps {
+    grid-area: coocking_steps;
+}
+
+.coocking_steps ol {
+    padding-left: 20px;
+}
+
+.coocking_steps ol li {
+    margin-bottom: 10px;
+}
