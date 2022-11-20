@@ -28,7 +28,8 @@
                     <Label for="recipe_name">Название</Label>
                 </div>
                 <div class="input_text_div" id="description">
-                    <textarea name="" id="recipe_description" placeholder="Введите описание рецепта" cols="30" rows="10"></textarea>
+                    <textarea name="" id="recipe_description" placeholder="Введите описание рецепта" cols="30"
+                        rows="10"></textarea>
                     <Label for="recipe_name">Описание</Label>
                 </div>
                 <div class="recipe_ing">
@@ -37,9 +38,9 @@
                             <p>Выбрать обложку</p>
                         </div>
                     </label>
-                    <input id='avatar_input' class="picture_input" type="file" accept="image/*">
-                    <img id='avatar' src="/img/avatar.png" alt="">
+                    <input id='avatar_input' onchange="avatarReadURL();" class="picture_input" type="file" accept="image/*">
                 </div>
+                <img id='avatar' src="/img/avatar.png" alt="">
                 <div class="semi_pictures">
                     <p class="theme">Дополнительные фотографии</p>
                     <div class="flex_div">
@@ -49,10 +50,10 @@
                                     <p>Добавить</p>
                                 </div>
                             </label>
-                            <input id='semi_input' class="picture_input" type="file" accept="image/*">
+                            <input id='semi_input' onchange="semiReadURL();" class="picture_input" type="file" accept="image/*">
                         </div>
                         <div class="gallery">
-                            <ul>
+                            <ul id="semi_gallery">
                                 <li><img src="/img/avatar.png" alt=""></li>
                                 <li><img src="/img/avatar.png" alt=""></li>
                                 <li><img src="/img/food_1.jpg" alt=""></li>
@@ -69,7 +70,7 @@
                                 <Label for="ingredients_name">Название</Label>
                                 <input id="ingredients_count" placeholder="Введите количество ингредиента" type="text">
                                 <Label for="ingredients_count">Количество</Label>
-                                <button>Удалить</button>
+                                <button class="del_btn">Удалить</button>
                             </div>
                         </li>
                     </ul>
@@ -78,12 +79,35 @@
                 <div class="steps">
                     <p class="theme">Этапы приготовления</p>
                     <ol>
-                        <li>asd</li>
+                        <li>
+                            <div class="steps_div">
+                                <textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' id="step" row='1'placeholder="Введите описание этапа"></textarea>
+                                <Label for="step">Описание этапа</Label>
+                                <button class="del_btn">Удалить</button>
+                            </div>
+                        </li>
                     </ol>
+                    <button class="cool_btn" id="ingredients_btn">Добавить</button>
+                </div>
+                <div class="semi_info">
+                    <p class="theme">Дополнительная информация</p>
+                    <label for="difficulty">Сложность приготволения </label>
+                    <input type="range" id="difficulty" min="1" max="10" step="1">
+                    <br>
+                    <input type='checkbox' id='is_vegan'></input>
+                    <label class='checkbox_label' for='is_vegan'>Для вегетариянцев</label>
+                    <br>
+                    <input class="cool_btn" id="add" type="submit" value="Опубликовать рецепт">
                 </div>
             </form>
         </div>
     </main>
+    <footer>
+        <div id="copy">
+            <p>Copiriting 2022 3P9lTb Entertainment. All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="/addRecipe.js"></script>
 </body>
 
 </html>

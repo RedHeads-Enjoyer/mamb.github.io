@@ -33,6 +33,7 @@ ol {
     padding-left: 0;
     margin: 0;
     counter-reset: my-counter;
+    margin-bottom: 16px;
 }
 
 ol li::before {
@@ -84,8 +85,8 @@ nav {
     padding-left: 20px;
     padding-right: 20px;
     overflow: hidden;
+    min-height: calc(100vh - 51px);
 }
-
 
 .theme {
     margin: 0;
@@ -102,10 +103,11 @@ form {
     grid-template-rows: 60px 1fr;
     grid-template-areas: 
     "recipe_name recipe_img"
-    "recipe_description recipe_img"
+    "recipe_description avatar"
     "semi_pictures semi_pictures"
     "ingredients ingredients"
-    "steps sptes";
+    "steps steps"
+    "semi_info .";
 }
 
 input[type='text'] {
@@ -134,17 +136,17 @@ textarea {
     sans-serif;
 }
 
-textarea::-webkit-scrollbar {
+.input_text_div textarea::-webkit-scrollbar {
     width: 10px;
 }
 
-textarea::-webkit-scrollbar-thumb {
+.input_text_div textarea::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: var(--main-color);
 }
 
 
-textarea::-webkit-scrollbar-track {
+.input_text_div textarea::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     background-color: rgb(249, 249, 249);
 }
@@ -157,7 +159,9 @@ textarea::-webkit-scrollbar-track {
 }
 
 .input_text_div label,
-.ingredients_div label {
+.ingredients_div label,
+.steps_div label
+ {
     position: absolute;
     left: 5px;
     top: -12px;
@@ -171,6 +175,10 @@ textarea::-webkit-scrollbar-track {
 
 #name {
     grid-area: recipe_name;
+}
+
+#recipe_description {
+    height: 215px;
 }
 
 #description {
@@ -217,7 +225,7 @@ textarea:focus + label {
 
 
 #avatar {
-    margin-top: 20px;
+    grid-area: avatar;
     border-radius: 5px;
     height: 224px;
     width: auto;
@@ -304,11 +312,12 @@ textarea:focus + label {
     width: 21%;
 }
 
-.ingredients_div:hover button {
+.ingredients_div:hover .del_btn,
+.steps_div:hover .del_btn {
     display: inline;
 }
 
-.ingredients_div button {
+.del_btn  {
     display: none;
     overflow: none;
     border: 0;
@@ -318,15 +327,95 @@ textarea:focus + label {
     color: var(--semi-color);
 }
 
-.ingredients_div button:hover {
+.del_btn:hover {
     cursor: pointer;
     color: var(--main-color)
 }
 
-.ingredients_div button:active {
+.del_btn:active {
     color: var(--focus-main-color);
 }
 
 .steps {
     grid-area: steps;
+}
+
+.steps_div {
+    display: flex;
+    position:relative;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.steps_div textarea {
+    width: 60%;
+}
+
+.semi_info {
+    grid-area: semi_info;
+}
+
+#copy {
+    color: white;
+    text-align: center;
+    background-color: var(--focus-main-color);
+}
+
+#copy p {
+    margin: 0;
+}
+
+input[type='range'],
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    background-color: var(--main-color);
+    border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 14px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    border: 2px solid var(--main-color);
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.checkbox_label::before {
+    transition: 0.12s;
+    border-radius: 5px;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    width: 17px;
+    height: 18px;
+    box-sizing: border-box;
+    border: 5px solid rgb(210, 210, 210);
+}
+
+input[type='checkbox']:checked+.checkbox_label::before {
+    border: 5px solid var(--main-color);
+}
+
+
+.checkbox_label {
+    margin-left: -10px;
+    padding-right: 25px;
+    position: relative;
+    color: var(--main-text-color);
+    font-weight: 400;
+}
+
+#add {
+    margin-top: 16px;
+    margin-bottom: 20px;
 }
