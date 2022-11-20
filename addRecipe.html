@@ -24,11 +24,11 @@
             <p class="theme">Информация про рецепт</p>
             <form action="#">
                 <div class="input_text_div" id="name">
-                    <input id="recipe_name" type="text" maxlength="30">
+                    <input id="recipe_name" placeholder="Введите название рецепта" type="text" maxlength="30">
                     <Label for="recipe_name">Название</Label>
                 </div>
                 <div class="input_text_div" id="description">
-                    <textarea name="" id="recipe_description" cols="30" rows="10"></textarea>
+                    <textarea name="" id="recipe_description" placeholder="Введите описание рецепта" cols="30" rows="10"></textarea>
                     <Label for="recipe_name">Описание</Label>
                 </div>
                 <div class="recipe_ing">
@@ -44,11 +44,11 @@
                     <p class="theme">Дополнительные фотографии</p>
                     <div class="flex_div">
                         <div class="select_div">
-                            <div id="select_image">
-                                <label for="semi_input">
-                                    <p>Выбрат</p>
-                                </label>
-                            </div>
+                            <label for="semi_input">
+                                <div id="select_image">
+                                    <p>Добавить</p>
+                                </div>
+                            </label>
                             <input id='semi_input' class="picture_input" type="file" accept="image/*">
                         </div>
                         <div class="gallery">
@@ -59,7 +59,27 @@
                             </ul>
                         </div>
                     </div>
-
+                </div>
+                <div class="ingredients">
+                    <p class="theme">Ингредиенты</p>
+                    <ul>
+                        <li>
+                            <div class="ingredients_div">
+                                <input id="ingredients_name" placeholder="Введите название ингредиента" type="text">
+                                <Label for="ingredients_name">Название</Label>
+                                <input id="ingredients_count" placeholder="Введите количество ингредиента" type="text">
+                                <Label for="ingredients_count">Количество</Label>
+                                <button>Удалить</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="cool_btn" id="ingredients_btn">Добавить</button>
+                </div>
+                <div class="steps">
+                    <p class="theme">Этапы приготовления</p>
+                    <ol>
+                        <li>asd</li>
+                    </ol>
                 </div>
             </form>
         </div>

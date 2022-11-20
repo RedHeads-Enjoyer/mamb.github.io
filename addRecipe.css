@@ -24,6 +24,24 @@ h1 {
     margin: 0;
 }
 
+ul {
+    list-style-type: none;
+}
+
+ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    counter-reset: my-counter;
+}
+
+ol li::before {
+    content: counter(my-counter);
+    padding-right: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .links a {
     margin-top: 3px;
     font-weight: 500;
@@ -71,6 +89,7 @@ nav {
 
 .theme {
     margin: 0;
+    margin-bottom: 10px;
     margin-top: 10px;
     font-weight: 500;
     font-size: 20px;
@@ -84,7 +103,9 @@ form {
     grid-template-areas: 
     "recipe_name recipe_img"
     "recipe_description recipe_img"
-    "semi_pictures semi_pictures";
+    "semi_pictures semi_pictures"
+    "ingredients ingredients"
+    "steps sptes";
 }
 
 input[type='text'] {
@@ -135,7 +156,8 @@ textarea::-webkit-scrollbar-track {
     width: 80%;
 }
 
-.input_text_div label {
+.input_text_div label,
+.ingredients_div label {
     position: absolute;
     left: 5px;
     top: -12px;
@@ -159,10 +181,8 @@ textarea::-webkit-scrollbar-track {
     grid-area: recipe_img;
 }
 
-#recipe_name:focus  + label {
-    color: var(--main-color);
-}
-
+#recipe_name:focus  + label,
+.ingredients_div input:focus + label,
 textarea:focus + label {
     color: var(--main-color);
 }
@@ -171,7 +191,10 @@ textarea:focus + label {
     display: none;
 }
 
-#select_image {
+#select_image,
+.cool_btn {
+    outline: none;
+    border: 0;
     background-color: var(--main-color);
     color: white;
     border-radius: 5px;
@@ -181,7 +204,8 @@ textarea:focus + label {
     transition: 0.12s;
 }
 
-#select_image:hover {
+#select_image:hover,
+.cool_btn:hover {
     cursor: pointer;
     background-color: var(--focus-main-color);
 }
@@ -209,7 +233,6 @@ textarea:focus + label {
 }
 
 .gallery {
-    margin-top: 10px;
     height: 114px;
     max-width: 100%;
     border-radius: 5px;
@@ -236,7 +259,6 @@ textarea:focus + label {
 .gallery ul {
     display: flex;
     margin: 0;
-    list-style-type: none;
     padding: 0;
 }
 
@@ -254,6 +276,57 @@ textarea:focus + label {
 }
 
 .select_div {
-    margin-top: 54px;
+    margin-top: 44px;
     margin-right: 10px;
+}
+
+.ingredients {
+    grid-area: ingredients;
+}
+
+.ingredients ul {
+    padding-left: 0;
+}
+
+.ingredients_div {
+    position: relative;
+}
+
+.ingredients_div input[type='text']:nth-child(1){
+    width: 40%;
+}
+
+.ingredients_div label:nth-child(4) {
+    left: calc(40% + 33px);
+}
+
+.ingredients_div input[type='text']:nth-child(3){
+    width: 21%;
+}
+
+.ingredients_div:hover button {
+    display: inline;
+}
+
+.ingredients_div button {
+    display: none;
+    overflow: none;
+    border: 0;
+    background-color: white;
+    padding: 0;
+    margin-left: 5px;
+    color: var(--semi-color);
+}
+
+.ingredients_div button:hover {
+    cursor: pointer;
+    color: var(--main-color)
+}
+
+.ingredients_div button:active {
+    color: var(--focus-main-color);
+}
+
+.steps {
+    grid-area: steps;
 }
