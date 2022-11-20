@@ -276,11 +276,39 @@ textarea:focus + label {
 
 .gallery ul li {
     height: 100px;
+    position: relative;
 }
 
 .gallery ul li img {
     height: 100px;
     width: auto;
+}
+
+.gallery ul li button {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    outline: none;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+#semi_gallery li:hover > button{
+    display: block;
+}
+
+
+.gallery ul li button:hover {
+    cursor: pointer;
+}
+
+.gallery ul li button img {
+    width: 10px;
+    height: 10px;
 }
 
 .select_div {

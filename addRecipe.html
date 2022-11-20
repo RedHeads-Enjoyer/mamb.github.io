@@ -38,7 +38,8 @@
                             <p>Выбрать обложку</p>
                         </div>
                     </label>
-                    <input id='avatar_input' onchange="avatarReadURL();" class="picture_input" type="file" accept="image/*">
+                    <input id='avatar_input' onchange="avatarReadURL();" class="picture_input" type="file"
+                        accept="image/*">
                 </div>
                 <img id='avatar' src="/img/avatar.png" alt="">
                 <div class="semi_pictures">
@@ -50,11 +51,19 @@
                                     <p>Добавить</p>
                                 </div>
                             </label>
-                            <input id='semi_input' onchange="semiReadURL();" class="picture_input" type="file" accept="image/*">
+                            <input id='semi_input' onchange="semiReadURL();" class="picture_input" type="file"
+                                accept="image/*">
                         </div>
                         <p id="nothing">Здесь пока ничего нет :(</p>
                         <div class="gallery">
-                            <ul id="semi_gallery"></ul>
+                            <ul id="semi_gallery">
+                                <li>
+                                    <img src="/img/avatar.png" alt="">
+                                    <button>
+                                        <img src="/img/x.png" alt="">
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -78,7 +87,8 @@
                     <ol>
                         <li>
                             <div class="steps_div">
-                                <textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' id="step" row='1'placeholder="Введите описание этапа"></textarea>
+                                <textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+                                    id="step" row='1' placeholder="Введите описание этапа"></textarea>
                                 <Label for="step">Описание этапа</Label>
                                 <button class="del_btn">Удалить</button>
                             </div>

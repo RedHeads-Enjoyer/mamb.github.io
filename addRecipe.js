@@ -14,7 +14,6 @@ function checkGallery() {
     }
     else {
         nothing.style.display = 'none';
-        gallery.style.display = 'block';
         btn.style.marginTop = '44px';
     }
 }
@@ -49,5 +48,7 @@ function semiReadURL() {
     li.append(img);
     gallery.append(li);
     console.log(gallery.innerHTML);
+    var gallery = document.querySelector('.gallery');
+    gallery.style.display = 'block';
     checkGallery();
 }
