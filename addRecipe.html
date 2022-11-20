@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/addRecipe.css">
+    <title>Добавление рецепта</title>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <div class='links'>
+                <a href="/index.html">О нас</a>
+                <a href="/addRecipe.html">Добавить рецепт</a>
+                <a href="/profile.html">Мой профиль</a>
+                <a href="/search.html">Найти рецепт</a>
+            </div>
+        </nav>
+        <div class="content">
+            <h1>Создайте свой рецепт</h1>
+            <p class="theme">Информация про рецепт</p>
+            <form action="#">
+                <div class="input_text_div" id="name">
+                    <input id="recipe_name" type="text" maxlength="30">
+                    <Label for="recipe_name">Название</Label>
+                </div>
+                <div class="input_text_div" id="description">
+                    <textarea name="" id="recipe_description" cols="30" rows="10"></textarea>
+                    <Label for="recipe_name">Описание</Label>
+                </div>
+                <div class="recipe_ing">
+                    <div id="select_image">
+                        <label for="avatar_input">
+                            <p>Выбрать обложку</p>
+                        </label>
+                    </div>
+                    <input id='avatar_input' class="picture_input" type="file" accept="image/*">
+                    <img id='avatar' src="/img/avatar.png" alt="">
+                </div>
+                <div class="semi_pictures">
+                    <p class="theme">Дополнительные фотографии</p>
+                    <div class="select_div">
+                        <div id="select_image">
+                            <label for="semi_input">
+                                <p>Выбрат</p>
+                            </label>
+                        </div>
+                        <input id='semi_input' class="picture_input" type="file" accept="image/*">
+                    </div>
+                    <div class="gallery">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
