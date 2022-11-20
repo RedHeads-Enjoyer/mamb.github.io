@@ -5,11 +5,17 @@ let = galleryCounter = 0;
 function checkGallery() {
     var semi_gallery = document.querySelector('#semi_gallery');
     var gallery = document.querySelector('.gallery');
+    var nothing = document.querySelector('#nothing');
+    var btn = document.querySelector('.select_div');
     if (semi_gallery.innerHTML.length == 0) {
+        nothing.style.display = 'block';
         gallery.style.display = 'none';
+        btn.style.marginTop = '0px';
     }
     else {
+        nothing.style.display = 'none';
         gallery.style.display = 'block';
+        btn.style.marginTop = '44px';
     }
 }
 
