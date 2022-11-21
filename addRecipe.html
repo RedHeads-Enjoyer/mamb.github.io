@@ -56,31 +56,14 @@
                         </div>
                         <p id="nothing">Здесь пока ничего нет :(</p>
                         <div class="gallery">
-                            <ul id="semi_gallery">
-                                <li>
-                                    <img src="/img/avatar.png" alt="">
-                                    <button>
-                                        <img src="/img/x.png" alt="">
-                                    </button>
-                                </li>
-                            </ul>
+                            <ul id="semi_gallery"></ul>
                         </div>
                     </div>
                 </div>
                 <div class="ingredients">
                     <p class="theme">Ингредиенты</p>
-                    <ul>
-                        <li>
-                            <div class="ingredients_div">
-                                <input id="ingredients_name" placeholder="Введите название ингредиента" type="text">
-                                <Label for="ingredients_name">Название</Label>
-                                <input id="ingredients_count" placeholder="Введите количество ингредиента" type="text">
-                                <Label for="ingredients_count">Количество</Label>
-                                <button class="del_btn">Удалить</button>
-                            </div>
-                        </li>
-                    </ul>
-                    <button class="cool_btn" id="ingredients_btn">Добавить</button>
+                    <ul id="ingredients_ul"></ul>
+                    <button class="cool_btn" id="ingredients_btn" onclick="addIngredient()">Добавить</button>
                 </div>
                 <div class="steps">
                     <p class="theme">Этапы приготовления</p>
