@@ -110,7 +110,7 @@ form {
     "semi_pictures semi_pictures"
     "ingredients ingredients"
     "steps steps"
-    "semi_info .";
+    "semi_info semi_info";
 }
 
 input[type='text'] {
@@ -440,7 +440,7 @@ input[type='checkbox']:checked+.checkbox_label::before {
 
 
 .checkbox_label {
-    margin-left: -10px;
+    margin-left: -8px;
     padding-right: 25px;
     position: relative;
     color: var(--main-text-color);
@@ -467,4 +467,29 @@ input[type='checkbox']:checked+.checkbox_label::before {
 
 #steps_ol li:nth-child(n + 1){
     margin-top: 10px;
+}
+
+#difficulty {
+    height: 10px;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+
+#difficulty_val {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 20px;
+    background-color: rgb(0, 220, 0);
+    color: white;
+    border-radius: 10px;
+}
+
+#last_flex_div .checkbox_label::before {
+    top: 3px;
+}
+
+#vegan_output {
+    margin: 0;
+    margin-left: 20px;
 }

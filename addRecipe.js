@@ -1,8 +1,20 @@
 var reader = new FileReader();
 
 let galleryCounter = 0;
-let ingredientCount = 0; 
+let ingredientCount = 0;
 let stepsCount = 0;
+
+var difficultyInput = document.querySelector('#difficulty');
+var difficultyOutput = document.querySelector('#difficulty_val');
+var veganInput = document.querySelector('#is_vegan');
+var veganOutpiut = document.querySelector('#vegan_output');
+var dialogWindow = document.querySelector('.dialog_window');
+var btnYes = document.querySelector('#yes');
+var btnNo = document.querySelector('#no');
+var is_vegan = false;
+var del = 0;
+difficultyInput.value = 0;
+
 
 function checkGallery() {
     var semi_gallery = document.querySelector('#semi_gallery');
@@ -46,7 +58,7 @@ checkGallery();
 checkIngredients();
 
 function avatarReadURL() {
-    var preview  = document.querySelector('#avatar');
+    var preview = document.querySelector('#avatar');
     var file = document.querySelector('#avatar_input').files[0];
     if (file) {
         reader.readAsDataURL(file);
@@ -87,24 +99,33 @@ function semiReadURL() {
 }
 
 function delSemi(val) {
-    var t = val;
-    var li = document.querySelector('#li' + t.slice(3));
-    li.remove();
-    checkGallery();
+    var tmp = confirm("Подтвердите удаление");
+    if (tmp) {
+        var t = val;
+        var li = document.querySelector('#li' + t.slice(3));
+        li.remove();
+        checkGallery();
+    }
 }
 
 function delIngredient(val) {
-    var t = val;
-    var li = document.querySelector('#liIngredient' + t.slice(4));
-    li.remove();
-    checkIngredients();
+    var tmp = confirm("Подтвердите удаление");
+    if (tmp) {
+        var t = val;
+        var li = document.querySelector('#liIngredient' + t.slice(4));
+        li.remove();
+        checkIngredients();
+    }
 }
 
 function delStep(val) {
-    var t = val;
-    var li = document.querySelector('#liS' + t.slice(4));
-    li.remove();
-    checkSteps();
+    var tmp = confirm("Подтвердите удаление");
+    if (tmp) {
+        var t = val;
+        var li = document.querySelector('#liS' + t.slice(4));
+        li.remove();
+        checkSteps();
+    }
 }
 
 function addIngredient() {
@@ -181,3 +202,31 @@ function addStep() {
     stepsCount += 1;
     checkSteps();
 }
+
+
+difficultyInput.addEventListener('input', function () {
+    var s = this.value + " ";
+    if (this.value > 7) {
+        s += 'СЛОЖНО';
+        difficultyOutput.style.backgroundColor = 'rgb(240, 0, 0)';
+    }
+    else if (this.value > 4) {
+        s += 'СРДЕНЕ';
+        difficultyOutput.style.backgroundColor = 'orange';
+    }
+    else {
+        s += 'ЛЕГКО';
+        difficultyOutput.style.backgroundColor = 'rgb(0, 220, 0)';
+    }
+    difficultyOutput.innerHTML = s;
+});
+
+veganInput.addEventListener('change', function () {
+    if (is_vegan) {
+        veganOutpiut.innerHTML = 'Нет';
+    }
+    else {
+        veganOutpiut.innerHTML = 'Да';
+    }
+    is_vegan = !is_vegan;
+})

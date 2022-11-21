@@ -78,12 +78,16 @@
                 </div>
                 <div class="semi_info">
                     <p class="theme">Дополнительная информация</p>
-                    <label for="difficulty">Сложность приготволения </label>
-                    <input type="range" id="difficulty" min="1" max="10" step="1">
-                    <br>
-                    <input type='checkbox' id='is_vegan'></input>
-                    <label class='checkbox_label' for='is_vegan'>Для вегетариянцев</label>
-                    <br>
+                    <div class="flex_div">
+                        <label for="difficulty">Сложность приготволения </label>
+                        <input type="range" id="difficulty" min="1" max="10" step="1">
+                        <p id="difficulty_val">1 ЛЕГКО</p>
+                    </div>
+                    <div class="flex_div" id="last_flex_div">
+                        <input type='checkbox' id='is_vegan'></input>
+                        <label class='checkbox_label' for='is_vegan'>Для вегетариянцев</label>
+                        <p id="vegan_output"></p>
+                    </div>
                     <input class="cool_btn" id="add" type="submit" value="Опубликовать рецепт">
                 </div>
             </form>
