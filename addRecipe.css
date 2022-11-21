@@ -449,9 +449,13 @@ input[type='checkbox']:checked+.checkbox_label::before {
     margin-bottom: 20px;
 }
 
-#nothing {
+.nothing {
     margin-top: 5px;
     opacity: 0.7;
+}
+
+#ingredients_btn {
+    margin-right: 10px;
 }
 
 #ingredients_ul li:nth-child(n + 1){

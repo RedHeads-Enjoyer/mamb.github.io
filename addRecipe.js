@@ -6,7 +6,7 @@ let ingredientCount = 0;
 function checkGallery() {
     var semi_gallery = document.querySelector('#semi_gallery');
     var gallery = document.querySelector('.gallery');
-    var nothing = document.querySelector('#nothing');
+    var nothing = document.querySelector('#nothing_gal');
     var btn = document.querySelector('.select_div');
     if (semi_gallery.innerHTML.length == 0) {
         nothing.style.display = 'block';
@@ -17,10 +17,21 @@ function checkGallery() {
         nothing.style.display = 'none';
         btn.style.marginTop = '44px';
     }
-    console.log(semi_gallery.innerHTML.length)
+}
+
+function checkIngredients() {
+    var ul = document.querySelector('#ingredients_ul');
+    var nothing = document.querySelector('#nothing_ing');
+    if (ul.innerHTML.length == 0) {
+        nothing.style.display = 'block';
+    }
+    else {
+        nothing.style.display = 'none'
+    }
 }
 
 checkGallery();
+checkIngredients();
 
 function avatarReadURL() {
     var preview  = document.querySelector('#avatar');
@@ -65,9 +76,16 @@ function semiReadURL() {
 
 function delSemi(val) {
     var t = val;
-    var li = document.querySelector('#li' + t.slice(3, 4));
+    var li = document.querySelector('#li' + t.slice(3));
     li.remove();
     checkGallery();
+}
+
+function delIngredient(val) {
+    var t = val;
+    var li = document.querySelector('#liIngredient' + t.slice(4));
+    li.remove();
+    checkIngredients();
 }
 
 function addIngredient() {
@@ -93,8 +111,10 @@ function addIngredient() {
     count.setAttribute('placeholder', 'Введите количество ингредиента');
     countLabel.innerHTML = 'Количество';
     btn.className = 'del_btn';
+    btn.id = 'btnI' + ingredientCount;
     btn.innerHTML = 'Удалить';
-
+    btn.setAttribute('onclick', 'delIngredient(this.id)');
+    ingredientsLi.id = 'liIngredient' + ingredientCount;
     ingredientDiv.append(name);
     ingredientDiv.append(nameLabel);
     ingredientDiv.append(count);
@@ -105,4 +125,5 @@ function addIngredient() {
     ingredientsUl.append(ingredientsLi);
 
     ingredientCount += 1;
+    checkIngredients();
 }

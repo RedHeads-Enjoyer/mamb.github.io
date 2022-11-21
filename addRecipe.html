@@ -54,7 +54,7 @@
                             <input id='semi_input' onchange="semiReadURL();" class="picture_input" type="file"
                                 accept="image/*">
                         </div>
-                        <p id="nothing">Здесь пока ничего нет :(</p>
+                        <p class='nothing' id="nothing_gal">Здесь пока ничего нет :(</p>
                         <div class="gallery">
                             <ul id="semi_gallery"></ul>
                         </div>
@@ -63,7 +63,10 @@
                 <div class="ingredients">
                     <p class="theme">Ингредиенты</p>
                     <ul id="ingredients_ul"></ul>
-                    <button class="cool_btn" id="ingredients_btn" onclick="addIngredient()">Добавить</button>
+                    <div class="flex_div">
+                        <button class="cool_btn" id="ingredients_btn" onclick="addIngredient()">Добавить</button>
+                        <p class="nothing" id="nothing_ing">Тут ничего нет :(</p>
+                    </div>
                 </div>
                 <div class="steps">
                     <p class="theme">Этапы приготовления</p>
