@@ -2,6 +2,7 @@ var reader = new FileReader();
 
 let galleryCounter = 0;
 let ingredientCount = 0; 
+let stepsCount = 0;
 
 function checkGallery() {
     var semi_gallery = document.querySelector('#semi_gallery');
@@ -27,6 +28,17 @@ function checkIngredients() {
     }
     else {
         nothing.style.display = 'none'
+    }
+}
+
+function checkSteps() {
+    var ol = document.querySelector('#steps_ol');
+    var nothing = document.querySelector('#nothing_step');
+    if (ol.innerHTML.length == 0) {
+        nothing.style.display = 'block';
+    }
+    else {
+        nothing.style.display = 'none';
     }
 }
 
@@ -88,6 +100,13 @@ function delIngredient(val) {
     checkIngredients();
 }
 
+function delStep(val) {
+    var t = val;
+    var li = document.querySelector('#liS' + t.slice(4));
+    li.remove();
+    checkSteps();
+}
+
 function addIngredient() {
     var ingredientsUl = document.querySelector('#ingredients_ul');
 
@@ -126,4 +145,39 @@ function addIngredient() {
 
     ingredientCount += 1;
     checkIngredients();
+}
+
+function addStep() {
+    var stepsOl = document.querySelector('#steps_ol');
+
+    var stepsLi = document.createElement('li');
+    var stepsDiv = document.createElement('div');
+    var textarea = document.createElement('textarea');
+    var label = document.createElement('label');
+    var btn = document.createElement('button');
+
+    stepsLi.id = 'liS' + stepsCount;
+    textarea.id = 'taS' + stepsCount;
+    btn.id = 'btnS' + stepsCount;
+
+    label.setAttribute('for', '#taS' + stepsCount);
+    label.innerHTML = 'Описание этапа';
+
+    btn.setAttribute('onclick', 'delStep(this.id)');
+    btn.innerHTML = 'Удалить';
+    btn.className = 'del_btn';
+
+    stepsDiv.className = 'steps_div';
+    textarea.setAttribute('oninput', 'this.style.height = "";this.style.height = this.scrollHeight + "px"');
+    textarea.setAttribute('placeholder', 'Введите описание этапа')
+
+    stepsDiv.append(textarea);
+    stepsDiv.append(label);
+    stepsDiv.append(btn);
+
+    stepsLi.append(stepsDiv);
+    stepsOl.append(stepsLi);
+
+    stepsCount += 1;
+    checkSteps();
 }

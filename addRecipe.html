@@ -70,17 +70,11 @@
                 </div>
                 <div class="steps">
                     <p class="theme">Этапы приготовления</p>
-                    <ol>
-                        <li>
-                            <div class="steps_div">
-                                <textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
-                                    id="step" row='1' placeholder="Введите описание этапа"></textarea>
-                                <Label for="step">Описание этапа</Label>
-                                <button class="del_btn">Удалить</button>
-                            </div>
-                        </li>
-                    </ol>
-                    <button class="cool_btn" id="ingredients_btn">Добавить</button>
+                    <ol id="steps_ol"></ol>
+                    <div class="flex_div">
+                        <button class="cool_btn" id="ingredients_btn" onclick="addStep()">Добавить</button>
+                        <p class="nothing" id="nothing_step">Тут посто :(</p>
+                    </div>
                 </div>
                 <div class="semi_info">
                     <p class="theme">Дополнительная информация</p>

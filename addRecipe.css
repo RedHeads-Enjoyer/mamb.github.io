@@ -38,9 +38,12 @@ ol {
 
 ol li::before {
     content: counter(my-counter);
+    counter-increment: my-counter;
     padding-right: 10px;
     font-size: 20px;
     font-weight: 600;
+    color: var(--main-color);
+    
 }
 
 .links a {
@@ -460,4 +463,8 @@ input[type='checkbox']:checked+.checkbox_label::before {
 
 #ingredients_ul li:nth-child(n + 1){
     margin-top: 16px;
+}
+
+#steps_ol li:nth-child(n + 1){
+    margin-top: 10px;
 }
