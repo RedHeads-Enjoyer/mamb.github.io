@@ -493,3 +493,7 @@ input[type='checkbox']:checked+.checkbox_label::before {
     margin: 0;
     margin-left: 20px;
 }
+
+.checkbox_label:hover {
+    cursor: pointer;
+}

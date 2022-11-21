@@ -8,11 +8,7 @@ var difficultyInput = document.querySelector('#difficulty');
 var difficultyOutput = document.querySelector('#difficulty_val');
 var veganInput = document.querySelector('#is_vegan');
 var veganOutpiut = document.querySelector('#vegan_output');
-var dialogWindow = document.querySelector('.dialog_window');
-var btnYes = document.querySelector('#yes');
-var btnNo = document.querySelector('#no');
 var is_vegan = false;
-var del = 0;
 difficultyInput.value = 0;
 
 
