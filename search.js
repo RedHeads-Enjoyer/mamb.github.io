@@ -9,8 +9,8 @@ var cbSouce = document.querySelector('#souce');
 var radAnyScore = document.getElementsByName('score');
 var timeFrom = document.querySelector('#time_from');
 var timeTo = document.querySelector('#time_to');
-var inputDifficulty = document.querySelector('#dif_input');
 var forVegan = document.querySelector('#for_vegetarian');
+var recipeCount = document.querySelector('#recipe_count');
 
 var recipeList = new Array();
 var displayList = new Array();
@@ -115,10 +115,10 @@ for (var i = 0; i < displayList.length; i++) {
     addRecipe(displayList[i]);
 }
 
+if (displayList.length == 0) recipeCount.innerHTML ='По вашему запросу нчего не найдено :(';
+else recipeCount.innerHTML ='Найдено ' + displayList.length + ' рецептов';
+
 function searchRecipe() {
-    if (cbSoup.checked) {
-        alert('asd')
-    }
     var tmp = recipeList;
     var name = searchName.value;
     if (name.length > 0) {
@@ -200,12 +200,42 @@ function searchRecipe() {
         }
     }
 
+    var tmp4 = tmp3;
+    var l = timeFrom.value;
+    var h = timeTo.value;
+    if (l.length > 0 || h.length > 0) {
+        var tmp4 = new Array()
+        if (l.length == 0) l = 5;
+        if (h.length == 0) h = 600;
+        for (let i = 0; i < tmp3.length; i++) {
+            if (tmp3[i].rTime >= l && tmp3[i].rTime <= h) {
+                tmp4.push(tmp3[i]);
+            }
+        }
+    }
+
+    var tmp5 = tmp4;
+
+    if (forVegan.checked) {
+        var tmp5 = new Array();
+        for (let i = 0; i < tmp4.length; i++) {
+            if (tmp4[i].rVegan == true) {
+                tmp5.push(tmp4[i])
+            }
+        }
+    }
+
     var recipeGallery = document.querySelector('#result_gallery');
     recipeGallery.innerHTML = '';
 
-    // alert(tmp2.length);
-    for (let i = 0; i < tmp3.length; i++) {
-        addRecipe(tmp3[i]);
+    if (tmp5.length == 0) recipeCount.innerHTML ='По вашему запросу нчего не найдено :(';
+    else if (tmp5.length == 1) recipeCount.innerHTML = 'Найден 1 рецепт';
+    else if (tmp5.length < 5) recipeCount.innerHTML = 'Найдено ' + tmp5.length + ' рецепта'
+    else recipeCount.innerHTML ='Найдено ' + tmp5.length + ' рецептов';
+
+    for (let i = 0; i < tmp5.length; i++) {
+        addRecipe(tmp5[i]);
     }
+
 
 } 
