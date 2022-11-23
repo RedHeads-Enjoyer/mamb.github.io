@@ -1,7 +1,7 @@
 var recipeList = new Array();
 
 class Recipe {
-    constructor(rName, rImgSrc, rDescription, rUserScore, rDifficulty, rAuthorName, rTime) {
+    constructor(rName, rImgSrc, rDescription, rUserScore, rDifficulty, rAuthorName, rTime, type) {
         this.rName = rName;
         this.rImgSrc = rImgSrc;
         this.rDescription = rDescription;
@@ -9,13 +9,17 @@ class Recipe {
         this.rDifficulty = rDifficulty;
         this.rAuthorName = rAuthorName;
         this.rTime = rTime;
+        this.type = type;
     }
 }
 
 
 
 recipeList.push(new Recipe('Стейк', 'https://e1.edimdoma.ru/data/posts/0002/2542/22542-ed4_wide.jpg?1631192811', 'Типа описение', '4.2', '6', 'Xaer', '60'));
-recipeList.push(new Recipe('Щи', '/img/shi/jpg', ))
+recipeList.push(new Recipe('Щи', '/img/shi.jpg', 'Классические щи из свежей капусты - замечательное первое блюдо для семейного обеда . Ароматные и наваристые щи на курином бульоне понравятся и взрослым и детям. А если к ним добавить сметану, свежую зелень и подать чесночные пампушки, то однозначно все попросят еще добавки.', 4.9, 5, 'СуперПовар', 70, 'soup'));
+recipeList.push(new Recipe('Макароны по-флотски', '/img/makaroni.jpg', 'Макароны по-флотски - классическое блюдо советской домашней кухни. Рецепт этого блюда  появился примерно в 50-е годы XX века, и с тех пор оно стало одним из любимых в СССР. Простое, недорого, сытное, что еще нужно для популярности? Ах, да, вкус! Макароны по-флотски - очень вкусное блюдо, когда вы готовите его их хорошего мяса и правильных макарон.', 4.4, 6, 'Вовчик', 50, 'hot'));
+recipeList.push(new Recipe('Компот', '/img/kompot.jpg', 'Самый вкусный компот получается из смеси сухофруктов. Ароматный и полезный. Мы всегда делаем такой на новый год и Рождество.', 3.8, 2, 'Вовчик', 150, 'drink'));
+
 
 function addRecipe(recipe) {
     var recipeGallery = document.querySelector('#result_gallery');
@@ -46,8 +50,8 @@ function addRecipe(recipe) {
     timeImg.src = '/img/clock.png';
 
     var tmp = recipe.rDescription;
-    if (tmp.length > 76) {
-        tmp = tmp.slice(0, 76) + '...';
+    if (tmp.length > 50) {
+        tmp = tmp.slice(0, 50) + '...';
     }
 
     var duration = recipe.rTime;
@@ -89,6 +93,6 @@ function addRecipe(recipe) {
 
 
 
-
-
-addRecipe(recipeList[0]);
+for (var i = 0; i < recipeList.length; i++) {
+    addRecipe(recipeList[i]);
+}

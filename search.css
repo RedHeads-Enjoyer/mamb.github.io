@@ -356,6 +356,8 @@ nav {
 
 .line_fix {
     min-height: 52px;
+    word-wrap: break-word;
+    
 }
 
 .line_fix p {
