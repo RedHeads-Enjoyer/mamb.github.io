@@ -95,7 +95,6 @@ nav {
 }
 
 .recipe_gallery {
-    width: fit-content;
     display: flex;
     grid-area: recipe_gallery;
 }
@@ -120,6 +119,7 @@ nav {
 
 .small_img::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
 }
 
 .small_img::-webkit-scrollbar-thumb {
@@ -148,6 +148,9 @@ nav {
     border-radius: 0 10px 10px 0;
 }
 
+.main_img_div {
+    grid-area: main_food;
+}
 
 #main_food img {
     height: 320px;
@@ -156,6 +159,7 @@ nav {
 
 .recipe_info {
     grid-area: recipe_info;
+    margin-left: 20px;
 }
 
 .theme {
@@ -320,8 +324,10 @@ input[type='checkbox']:checked+.checkbox_label::before {
 }
 
 #mini_btn {
+    border: 2px solid var(--main-color);
+    box-sizing: content-box;
     position: fixed;
-    top: -2px;
+    top: -4px;
     right: 12px;
     display: none;
     width: 26px;
@@ -414,6 +420,90 @@ a {
     height: 1px;
     background-color: var(--main-color);
 } 
+
+@media (max-width: 960px) {
+    .recipe_info {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "recipe_name"
+        "recipe_gallery "
+        "recipe_info "
+        "recipe_description "
+        "recipe_ingredients "
+        "coocking_steps"
+        "rate_recipe";
+    }
+    
+    .flex_div {
+        display: block;
+    }
+
+    .flex_div p {
+        width: 120px;
+    }
+
+    #score_val {
+        width: 200px;
+        text-align: center;
+    }
+
+    .recipe_gallery {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .small_img {
+        width: calc(100vw - 70px);
+        height: 120px;
+        display: flex;
+        border-radius: 10px 10px 0 0;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+
+    .small_img .img_div {
+        height: 100px;
+        width: auto;
+        margin: 0;
+    }
+
+    .small_img .img_div img {
+        height: 100px;
+        width: auto;
+        margin: 0;
+    }
+
+    .main_img_div {
+        width: calc(100vw - 70px);
+        height: auto;
+        border-radius: 0 0 10px 10px;
+    }
+
+    #main_food {
+        width: calc(100vw - 50px);
+        height: auto;
+        border-radius: 0 0 10px 10px;
+    }
+
+    #last_flex_div {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    #vegan_output {
+        width: 20px;
+    }
+
+    #difficulty_val {
+        margin-top: 10px;
+    }
+}
 
 @media (max-width: 780px) {
     .links {
