@@ -20,11 +20,12 @@
             </div>
         </nav>
         <div class='search_div'>
-            <form>
+            <div class="form">
                 <!-- Строка поиска -->
                 <div id='search_bar'>
-                    <input type='text' placeholder='Название блюда' name='name'></input>
-                    <input type='submit' value='Найти'></input>
+                    <input type='text' id='name_search' placeholder='Название блюда' name='name'></input>
+                    <button onclick="searchRecipe()">Найти</button>
+                    <!-- <input type='submit' value='Найти' onclick="searchRecipe()"></input> -->
                 </div>
                 <!-- Тип блюда -->
                 <p class='group_name'>Тип блюда</p>
@@ -63,12 +64,12 @@
                     max='600' onkeyup="check(this)"></input>
                 <!-- Сложность приготовления -->
                 <p class='group_name'>Сложность приготовления</p>
-                <input type='range' min='1' max='10' step='1'></input>
+                <input type='range' min='1' max='10' step='1' id="dif_input"></input>
                 <!-- Для вегетариянцев -->
                 <p class='group_name'>Для вегетарианцев</p>
                 <input type='checkbox' id='for_vegetarian'></input>
                 <label class='checkbox_label' for='for_vegetarian'>Да/нет</label>
-            </form>
+            </div>
         </div>
         <div class='result_div'>
             <p id='recipe_count'>Найдено 10 рцептов</p>
