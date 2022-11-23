@@ -58,9 +58,9 @@
                 <!-- Время приготовления -->
                 <p class='group_name'>Время приготовления, минуты</p>
                 <input type='number' name='time' class='text_from_to' placeholder='От 5' id='time_from' min='5'
-                    max='600'></input>
+                    max='600' onkeyup="check(this)"></input>
                 <input type='number' name='time' class='text_from_to' placeholder='До 600' id='time_to' min='5'
-                    max='600'></input>
+                    max='600' onkeyup="check(this)"></input>
                 <!-- Сложность приготовления -->
                 <p class='group_name'>Сложность приготовления</p>
                 <input type='range' min='1' max='10' step='1'></input>
