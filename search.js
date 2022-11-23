@@ -41,6 +41,7 @@ recipeList.push(new Recipe('Салат "Цезарь"', '/img/salat.jpg', 'Од�
 function addRecipe(recipe) {
     var recipeGallery = document.querySelector('#result_gallery');
 
+    var recipeLink = document.createElement('a');
     var recipeCard = document.createElement('div');
     var recipeName = document.createElement('p');
     var imageDiv = document.createElement('div');
@@ -65,6 +66,7 @@ function addRecipe(recipe) {
     lineFix.className = 'line_fix';
 
     timeImg.src = '/img/clock.png';
+    recipeLink.href = '/openRecipe.html';
 
     var tmp = recipe.rDescription;
     if (tmp.length > 50) {
@@ -101,9 +103,10 @@ function addRecipe(recipe) {
     lineFix.append(recipeDescription);
     recipeCard.append(lineFix);
     recipeCard.append(recipeInfo)
+    recipeLink.append(recipeCard);
 
 
-    recipeGallery.append(recipeCard);
+    recipeGallery.append(recipeLink);
 }
 
 function check(obj) {
