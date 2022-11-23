@@ -5,6 +5,7 @@ var veganOutpiut = document.querySelector('#vegan_output');
 var scoreInput = document.querySelector('#score');
 var scoreOutput = document.querySelector('#score_val');
 var is_vegan = false;
+var mainImg = document.querySelector('#main_food');
 difficultyInput.value = 0;
 scoreInput.value = 3;
 
@@ -53,3 +54,9 @@ scoreInput.addEventListener('input', function() {
         scoreOutput.innerHTML = 'Очень вкусно';
     }
 })
+
+function setImg(val) {
+    var img = document.querySelector('#' + val);
+    var src = img.getAttribute('src');
+    mainImg.src = src;
+}

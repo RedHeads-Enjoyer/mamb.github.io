@@ -137,6 +137,10 @@ nav {
     height: auto;
 }
 
+.small_img div:hover {
+    cursor: pointer;
+}
+
 #main_food {
     height: 320px;
     width: auto;
