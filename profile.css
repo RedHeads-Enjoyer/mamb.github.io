@@ -71,8 +71,10 @@ nav {
 }
 
 #avatar  {
-    width: 300px;
-    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
     border-radius: 10px;
     box-sizing: border-box;
     border: 4px solid var(--main-color);
@@ -279,8 +281,10 @@ a {
 }
 
 #mini_btn {
+    border: 2px solid var(--main-color);
+    box-sizing: content-box;
     position: fixed;
-    top: -2px;
+    top: -4px;
     right: 12px;
     display: none;
     width: 26px;
@@ -387,3 +391,31 @@ input[type='checkbox'] {
     }
 }
 
+@media (max-width: 700px) {
+    #avatar {
+        width: 50%;
+    }
+    
+    .info {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "avatar"
+        "about"
+        "anekdot"
+        "social"
+        "gallery_text"
+        "gallery";
+    }   
+}
+
+@media (max-width: 400px) {
+    .gallery {
+        padding-top: 60px;
+        padding: 0;
+    }
+    .gallery .recipe_card {
+        margin-top: -30px;
+        transform: scale(0.85);
+        width: 300px;
+    }
+}

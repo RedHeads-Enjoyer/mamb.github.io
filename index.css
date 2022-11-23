@@ -149,8 +149,10 @@ footer p {
 }
 
 #mini_btn {
+    border: 2px solid var(--main-color);
+    box-sizing: content-box;
     position: fixed;
-    top: -2px;
+    top: -4px;
     right: 12px;
     display: none;
     width: 26px;
