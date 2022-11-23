@@ -147,6 +147,7 @@ nav {
 
 .result_div {
     grid-area: "result";
+    width: 100%;
 }
 
 
@@ -385,4 +386,19 @@ nav {
     height: 1px;
     width: 100%;
     background-color: var(--semi-color);
+}
+
+
+@media (max-width: 966px) {
+    .search_div {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px 1fr;
+        grid-template-areas:
+        "navigation navigation"
+        "result result";
+    }
 }
