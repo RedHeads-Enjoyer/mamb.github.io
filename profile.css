@@ -412,9 +412,11 @@ input[type='checkbox'] {
     .gallery {
         padding-top: 60px;
         padding: 0;
+        display: block;
     }
     .gallery .recipe_card {
         margin-top: -30px;
+        margin-left: -20px;
         transform: scale(0.85);
         width: 300px;
     }
