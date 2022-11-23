@@ -55,6 +55,7 @@ main {
     height: 100vh;
     display: grid;
     grid-template-columns: 300px 1fr;
+    grid-template-rows: 30px 1fr;
     grid-template-areas:
         "navigation navigation"
         "search result";
@@ -289,15 +290,6 @@ nav {
     width: 100%;
 }
 
-.recipe_description::after {
-    content: '';
-    display: block;
-    position: relative;
-    margin-top: 8px;
-    height: 2px;
-    width: 100%;
-    background-color: var(--semi-color);
-}
 
 .recipe_info {
     position: absolute;
@@ -341,6 +333,7 @@ nav {
 
 .recipe_description {
     text-indent: 10px;
+    height: 52px;
 }
 
 .links {
@@ -349,4 +342,30 @@ nav {
     max-width: 800px;
     display: flex;
     justify-content: space-around;
+}
+
+.recipe_time {
+    display: flex;
+}
+
+.recipe_time img {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+.line_fix {
+    min-height: 52px;
+}
+
+.line_fix p {
+    margin-bottom: 0;
+}
+
+.line_fix::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: var(--semi-color);
 }
