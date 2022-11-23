@@ -11,6 +11,11 @@ var timeFrom = document.querySelector('#time_from');
 var timeTo = document.querySelector('#time_to');
 var forVegan = document.querySelector('#for_vegetarian');
 var recipeCount = document.querySelector('#recipe_count');
+var menu = document.querySelector('.search_div');
+var menuBtn = document.querySelector('#open_menu');
+var MenuText = document.querySelector('#menu_text');
+
+var isMenuOpen = false;
 
 var recipeList = new Array();
 var displayList = new Array();
@@ -239,6 +244,19 @@ function searchRecipe() {
     for (let i = 0; i < tmp5.length; i++) {
         addRecipe(tmp5[i]);
     }
-
-
 } 
+
+function openMenu() {
+    if (!isMenuOpen) {
+        MenuText.innerHTML = 'ЗАКРЫТЬ МЕНЮ';
+        menuBtn.style.left = '282px'
+        menu.style.left = '0px';
+        isMenuOpen = true;
+    } 
+    else {
+        MenuText.innerHTML = 'ОТКРЫТЬ МЕНЮ';
+        menuBtn.style.left = '0px';
+        menu.style.left = '-282px';
+        isMenuOpen = false;
+    }
+}

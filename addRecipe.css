@@ -99,7 +99,7 @@ nav {
     font-size: 20px;
 }
 
-form {
+.form {
     margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;

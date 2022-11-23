@@ -13,19 +13,19 @@
     <main>
         <nav>
             <div class='links'>
-                <a href="https://weestle.github.io/mamb.github.io/index.html">О нас</a>
-                <a href="https://weestle.github.io/mamb.github.io/addRecipe.html">Добавить рецепт</a>
-                <a href="https://weestle.github.io/mamb.github.io/profile.html">Мой профиль</a>
-                <a href="https://weestle.github.io/mamb.github.io/search.html">Найти рецепт</a>
+                <a href="index.html">О нас</a>
+                <a href="addRecipe.html">Добавить рецепт</a>
+                <a href="profile.html">Мой профиль</a>
+                <a href="search.html">Найти рецепт</a>
             </div>
         </nav>
+        <button id="open_menu" onclick="openMenu()"><p id="menu_text">ОТКРЫТЬ МЕНЮ</p></button>
         <div class='search_div'>
             <div class="form">
                 <!-- Строка поиска -->
                 <div id='search_bar'>
                     <input type='text' id='name_search' placeholder='Название блюда' name='name'></input>
                     <button onclick="searchRecipe()">Найти</button>
-                    <!-- <input type='submit' value='Найти' onclick="searchRecipe()"></input> -->
                 </div>
                 <!-- Тип блюда -->
                 <p class='group_name'>Тип блюда</p>
