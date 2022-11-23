@@ -24,6 +24,7 @@ function checkGallery() {
     }
     else {
         nothing.style.display = 'none';
+        if (window.screen.width >= 780) 
         btn.style.marginTop = '44px';
     }
 }

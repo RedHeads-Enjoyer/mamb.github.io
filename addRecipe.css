@@ -43,7 +43,7 @@ ol li::before {
     font-size: 20px;
     font-weight: 600;
     color: var(--main-color);
-    
+
 }
 
 .links a {
@@ -104,13 +104,13 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 60px 1fr;
-    grid-template-areas: 
-    "recipe_name recipe_img"
-    "recipe_description avatar"
-    "semi_pictures semi_pictures"
-    "ingredients ingredients"
-    "steps steps"
-    "semi_info semi_info";
+    grid-template-areas:
+        "recipe_name recipe_img"
+        "recipe_description avatar"
+        "semi_pictures semi_pictures"
+        "ingredients ingredients"
+        "steps steps"
+        "semi_info semi_info";
 }
 
 input[type='text'] {
@@ -135,8 +135,8 @@ textarea {
     font-size: 16px;
     font-weight: 400;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
 }
 
 .input_text_div textarea::-webkit-scrollbar {
@@ -163,8 +163,7 @@ textarea {
 
 .input_text_div label,
 .ingredients_div label,
-.steps_div label
- {
+.steps_div label {
     position: absolute;
     left: 5px;
     top: -12px;
@@ -192,9 +191,9 @@ textarea {
     grid-area: recipe_img;
 }
 
-#recipe_name:focus  + label,
-.ingredients_div input:focus + label,
-textarea:focus + label {
+#recipe_name:focus+label,
+.ingredients_div input:focus+label,
+textarea:focus+label {
     color: var(--main-color);
 }
 
@@ -215,13 +214,14 @@ textarea:focus + label {
     transition: 0.12s;
 }
 
+
 #select_image:hover,
 .cool_btn:hover {
     cursor: pointer;
     background-color: var(--focus-main-color);
 }
 
-#select_image p{
+#select_image p {
     margin: 0;
     padding-top: 5px;
 }
@@ -229,6 +229,7 @@ textarea:focus + label {
 
 #avatar {
     grid-area: avatar;
+    display: block;
     border-radius: 5px;
     height: 224px;
     width: auto;
@@ -245,7 +246,7 @@ textarea:focus + label {
 
 .gallery {
     height: 114px;
-    max-width: 100%;
+    max-width: calc(100vw - 40px);
     border-radius: 5px;
     border: 2px solid var(--main-color);
     overflow-x: scroll;
@@ -300,7 +301,7 @@ textarea:focus + label {
     padding: 0;
 }
 
-#semi_gallery li:hover > button{
+#semi_gallery li:hover>button {
     display: block;
 }
 
@@ -331,17 +332,17 @@ textarea:focus + label {
     position: relative;
 }
 
-.ingredients_div input[type='text']:nth-child(1){
-    width: 40%;
+.ingredients_div input[type='text']:nth-child(1) {
+    width: 360px;
     margin-right: 10px;
 }
 
 .ingredients_div label:nth-child(4) {
-    left: calc(40% + 39px);
+    left: 399px;
 }
 
-.ingredients_div input[type='text']:nth-child(3){
-    width: 21%;
+.ingredients_div input[type='text']:nth-child(3) {
+    width: 210px;
 }
 
 .ingredients_div:hover .del_btn,
@@ -349,7 +350,7 @@ textarea:focus + label {
     display: inline;
 }
 
-.del_btn  {
+.del_btn {
     display: none;
     overflow: none;
     border: 0;
@@ -374,13 +375,13 @@ textarea:focus + label {
 
 .steps_div {
     display: flex;
-    position:relative;
+    position: relative;
     margin-left: 20px;
     margin-top: -20px;
 }
 
 .steps_div textarea {
-    width: 60%;
+    width: 100%;
 }
 
 .semi_info {
@@ -461,11 +462,11 @@ input[type='checkbox']:checked+.checkbox_label::before {
     margin-right: 10px;
 }
 
-#ingredients_ul li:nth-child(n + 1){
+#ingredients_ul li:nth-child(n + 1) {
     margin-top: 16px;
 }
 
-#steps_ol li:nth-child(n + 1){
+#steps_ol li:nth-child(n + 1) {
     margin-top: 10px;
 }
 
@@ -500,7 +501,9 @@ input[type='checkbox']:checked+.checkbox_label::before {
 
 #mini_btn {
     position: fixed;
-    top: -2px;
+    top: -4px;
+    border: 2px solid var(--main-color);
+    box-sizing: content-box;
     right: 12px;
     display: none;
     width: 26px;
@@ -549,7 +552,7 @@ a {
     top: 12px;
 }
 
-#mini_btn:checked + .small_links {
+#mini_btn:checked+.small_links {
     display: block;
 }
 
@@ -592,7 +595,7 @@ a {
     width: 100%;
     height: 1px;
     background-color: var(--main-color);
-} 
+}
 
 body::-webkit-scrollbar {
     width: 10px;
@@ -614,5 +617,83 @@ body::-webkit-scrollbar-track {
 
     #mini_btn {
         display: block;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "recipe_name"
+            "recipe_description"
+            "recipe_img"
+            "avatar"
+            "semi_pictures"
+            "ingredients"
+            "steps"
+            "semi_info";
+    }
+
+    .recipe_ing {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #avatar {
+        max-width: 80%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #recipe_name,
+    #recipe_description {
+        width: 110%;
+    }
+
+    .flex_div {
+        display: block;
+    }
+
+    #difficulty_val {
+        margin-top: 10px;
+        width: 120px;
+    }
+
+    #semi_select_div {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    #select_image {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ingredients_div input[type='text']:nth-child(1) {
+        width: calc(100% - 40px);
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .ingredients_div label:nth-child(4) {
+        top: 36px;
+        left: 5px;
+    }
+
+    .ingredients_div input[type='text']:nth-child(3) {
+        width: calc(100% - 80px);
+    }
+
+    #last_flex_div {
+        display: flex;
+    }
+}
+
+@media (min-width: 560px) {
+    #flex_div_prelast {
+        display: flex;
+    }
+
+    #difficulty_val {
+        margin-top: 2px;
     }
 }
