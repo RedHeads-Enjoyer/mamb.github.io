@@ -82,7 +82,7 @@ function semiReadURL() {
     img.id = 'img' + galleryCounter;
     li.id = 'li' + galleryCounter;
     btn.id = 'btn' + galleryCounter;
-    btnImg.src = 'img/x.png';
+    btnImg.src = '../img/x.png';
     btn.setAttribute('onclick', 'delSemi(this.id)');
     galleryCounter += 1;
     btn.append(btnImg);

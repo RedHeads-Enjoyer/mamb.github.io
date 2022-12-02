@@ -70,7 +70,7 @@ function addRecipe(recipe) {
     recipeTime.className = 'recipe_time';
     lineFix.className = 'line_fix';
 
-    timeImg.src = 'img/clock.png';
+    timeImg.src = '../img/clock.png';
     recipeLink.href = '/openRecipe.html';
 
     var tmp = recipe.rDescription;
