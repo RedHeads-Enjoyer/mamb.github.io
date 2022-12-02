@@ -71,7 +71,7 @@ function addRecipe(recipe) {
     lineFix.className = 'line_fix';
 
     timeImg.src = '../img/clock.png';
-    recipeLink.href = '/openRecipe.html';
+    recipeLink.href = 'openRecipe.html';
 
     var tmp = recipe.rDescription;
     if (tmp.length > 50) {
