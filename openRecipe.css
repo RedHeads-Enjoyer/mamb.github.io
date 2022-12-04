@@ -71,6 +71,10 @@ body::-webkit-scrollbar-track {
     background-color: rgb(249, 249, 249);
 }
 
+body {
+    scrollbar-color: red;
+}
+
 nav {
     height: 30px;
     background-color: var(--main-color);
@@ -476,6 +480,7 @@ a {
 
     .small_img .img_div img {
         height: 100px;
+        padding-right: 10px;
         width: auto;
         margin: 0;
     }
