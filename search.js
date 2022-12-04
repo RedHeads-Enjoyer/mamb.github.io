@@ -119,7 +119,7 @@ function check(obj) {
         if (obj.value < 5) obj.value = 5;
     }, 2000)
     setTimeout(() => {
-        if (obj.value > 5) obj.value = 600;
+        if (obj.value > 600) obj.value = 600;
     }, 2000)
 }
 
