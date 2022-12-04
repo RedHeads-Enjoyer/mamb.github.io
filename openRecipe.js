@@ -9,6 +9,7 @@ var mainImg = document.querySelector('#main_food');
 difficultyInput.value = 0;
 scoreInput.value = 3;
 
+// Ползунок сложности приготовления
 difficultyInput.addEventListener('input', function () {
     var s = this.value + " ";
     if (this.value > 7) {
@@ -25,7 +26,7 @@ difficultyInput.addEventListener('input', function () {
     }
     difficultyOutput.innerHTML = s;
 });
-
+// Для вегетарианцев
 veganInput.addEventListener('change', function () {
     if (is_vegan) {
         veganOutpiut.innerHTML = 'Нет';
@@ -35,8 +36,7 @@ veganInput.addEventListener('change', function () {
     }
     is_vegan = !is_vegan;
 })
-
-
+// Ползунок вкуса блюда
 scoreInput.addEventListener('input', function() {
     if (this.value == 1) {
         scoreOutput.innerHTML = 'Очень невкусно';

@@ -24,8 +24,8 @@ function checkGallery() {
     }
     else {
         nothing.style.display = 'none';
-        if (window.screen.width >= 780) 
-        btn.style.marginTop = '44px';
+        if (window.screen.width >= 780)
+            btn.style.marginTop = '44px';
     }
 }
 
@@ -54,6 +54,7 @@ function checkSteps() {
 checkGallery();
 checkIngredients();
 
+// Добавление обложки
 function avatarReadURL() {
     var preview = document.querySelector('#avatar');
     var file = document.querySelector('#avatar_input').files[0];
@@ -64,7 +65,7 @@ function avatarReadURL() {
         preview.src = reader.result;
     }
 }
-
+// Добавление дополнительных фотографий
 function semiReadURL() {
     var gallery = document.querySelector('#semi_gallery');
     var file = document.querySelector('#semi_input').files[0];
@@ -89,12 +90,12 @@ function semiReadURL() {
     li.append(img);
     li.append(btn);
     gallery.append(li);
-    console.log(gallery.innerHTML);
     var gallery = document.querySelector('.gallery');
     gallery.style.display = 'block';
     checkGallery();
 }
 
+// Удаление допольнительной фотографии
 function delSemi(val) {
     var tmp = confirm("Подтвердите удаление");
     if (tmp) {
@@ -104,17 +105,7 @@ function delSemi(val) {
         checkGallery();
     }
 }
-
-function delIngredient(val) {
-    var tmp = confirm("Подтвердите удаление");
-    if (tmp) {
-        var t = val;
-        var li = document.querySelector('#liIngredient' + t.slice(4));
-        li.remove();
-        checkIngredients();
-    }
-}
-
+// Удаление этапа приготовления
 function delStep(val) {
     var tmp = confirm("Подтвердите удаление");
     if (tmp) {
@@ -124,7 +115,17 @@ function delStep(val) {
         checkSteps();
     }
 }
-
+// Удаление ингредиента
+function delIngredient(val) {
+    var tmp = confirm("Подтвердите удаление");
+    if (tmp) {
+        var t = val;
+        var li = document.querySelector('#liIngredient' + t.slice(4));
+        li.remove();
+        checkIngredients();
+    }
+}
+// Добавление ингредиента
 function addIngredient() {
     var ingredientsUl = document.querySelector('#ingredients_ul');
 

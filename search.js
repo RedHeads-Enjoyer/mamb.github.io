@@ -115,19 +115,24 @@ function addRecipe(recipe) {
 }
 
 function check(obj) {
-    if (obj.value < 5) obj.value = 5;
-    if (obj.value > 600) obj.value = 600;
+    setTimeout(() => {
+        if (obj.value < 5) obj.value = 5;
+    }, 2000)
+    setTimeout(() => {
+        if (obj.value > 5) obj.value = 600;
+    }, 2000)
 }
 
 for (var i = 0; i < displayList.length; i++) {
     addRecipe(displayList[i]);
-}
+}       
 
 if (displayList.length == 0) recipeCount.innerHTML = 'По вашему запросу нчего не найдено :(';
 else recipeCount.innerHTML = 'Найдено ' + displayList.length + ' рецептов';
 
 function searchRecipe() {
     var tmp = recipeList;
+    // Определенное название
     var name = searchName.value;
     if (name.length > 0) {
         var cl = new Array();
@@ -138,9 +143,8 @@ function searchRecipe() {
             }
         }
     }
-
     var tmp2 = new Array();
-
+    // Нужен суп
     if (cbSoup.checked) {
         for (let i = 0; i < tmp.length; i++) {
             if (tmp[i].type == 'soup') {
@@ -148,7 +152,7 @@ function searchRecipe() {
             }
         }
     }
-
+    // Нужно горячее
     if (cbHot.checked) {
         for (let i = 0; i < tmp.length; i++) {
             if (tmp[i].type == 'hot') {
@@ -156,6 +160,7 @@ function searchRecipe() {
             }
         }
     }
+    // Дальше аналогично для других типов блюд
 
     if (cbDrink.checked) {
         for (let i = 0; i < tmp.length; i++) {
@@ -196,9 +201,8 @@ function searchRecipe() {
             }
         }
     }
-
     var tmp3 = tmp2;
-
+    // Оцента выше 4
     if (radAnyScore[0].checked) {
         var tmp3 = new Array();
         for (let i = 0; i < tmp2.length; i++) {
@@ -207,7 +211,7 @@ function searchRecipe() {
             }
         }
     }
-
+    // Определенная длительность
     var tmp4 = tmp3;
     var l = timeFrom.value;
     var h = timeTo.value;
@@ -221,9 +225,8 @@ function searchRecipe() {
             }
         }
     }
-
     var tmp5 = tmp4;
-
+    // Для вегетарианцев
     if (forVegan.checked) {
         var tmp5 = new Array();
         for (let i = 0; i < tmp4.length; i++) {
@@ -232,15 +235,12 @@ function searchRecipe() {
             }
         }
     }
-
     var recipeGallery = document.querySelector('#result_gallery');
     recipeGallery.innerHTML = '';
-
     if (tmp5.length == 0) recipeCount.innerHTML = 'По вашему запросу нчего не найдено :(';
     else if (tmp5.length == 1) recipeCount.innerHTML = 'Найден 1 рецепт';
     else if (tmp5.length < 5) recipeCount.innerHTML = 'Найдено ' + tmp5.length + ' рецепта'
     else recipeCount.innerHTML = 'Найдено ' + tmp5.length + ' рецептов';
-
     for (let i = 0; i < tmp5.length; i++) {
         addRecipe(tmp5[i]);
     }
