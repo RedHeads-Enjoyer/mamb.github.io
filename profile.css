@@ -58,11 +58,14 @@ p {
 }
 
 nav {
+    position: fixed;
+    width: 100vw;
     height: 30px;
     background-color: var(--main-color);
+    z-index: 10;
 }
-
 .content {
+    padding-top: 30px;
     padding-left: 20px;
     padding-right: 20px;
     max-width: 1000px;
@@ -407,18 +410,4 @@ input[type='checkbox'] {
         "gallery_text"
         "gallery";
     }   
-}
-
-@media (max-width: 400px) {
-    .gallery {
-        padding-top: 60px;
-        padding: 0;
-        display: block;
-    }
-    .gallery .recipe_card {
-        margin-top: -30px;
-        margin-left: -20px;
-        transform: scale(0.85);
-        width: 300px;
-    }
 }
