@@ -60,7 +60,7 @@ p {
 nav {
     position: fixed;
     width: 100vw;
-    height: 30px;
+    height: 100px;
     background-color: var(--main-color);
 }
 
