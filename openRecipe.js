@@ -17,7 +17,7 @@ difficultyInput.addEventListener('input', function () {
         difficultyOutput.style.backgroundColor = 'rgb(240, 0, 0)';
     }
     else if (this.value > 4) {
-        s += 'СРДЕНЕ';
+        s += 'СРЕДНЕ';
         difficultyOutput.style.backgroundColor = 'orange';
     }
     else {
@@ -37,7 +37,7 @@ veganInput.addEventListener('change', function () {
     is_vegan = !is_vegan;
 })
 // Ползунок вкуса блюда
-scoreInput.addEventListener('input', function() {
+scoreInput.addEventListener('input', function () {
     if (this.value == 1) {
         scoreOutput.innerHTML = 'Очень невкусно';
     }

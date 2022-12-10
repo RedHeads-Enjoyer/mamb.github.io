@@ -209,7 +209,7 @@ difficultyInput.addEventListener('input', function () {
         difficultyOutput.style.backgroundColor = 'rgb(240, 0, 0)';
     }
     else if (this.value > 4) {
-        s += 'СРДЕНЕ';
+        s += 'СРЕДНЕ';
         difficultyOutput.style.backgroundColor = 'orange';
     }
     else {
